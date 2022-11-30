@@ -1,0 +1,31 @@
+Hasil Perhitungan Q1
+
+SELECT  COUNT (*) as Total_Q1
+    
+
+FROM `bigquery-public-data.san_francisco.bikeshare_trips` AS trips
+JOIN `bigquery-public-data.san_francisco.bikeshare_stations` AS stations
+    ON trips.start_station_id = stations.station_id
+
+WHERE trips.start_date BETWEEN '2015-12-31' AND '2016-04-01'
+    AND trips.subscriber_type = 'Subscriber'
+    AND stations.landmark = 'Redwood City'
+
+LIMIT 1000
+
+
+Hasil Perhitungan Q2
+
+SELECT  COUNT (*) as Total_Q2
+    
+
+FROM `bigquery-public-data.san_francisco.bikeshare_trips` AS trips
+JOIN `bigquery-public-data.san_francisco.bikeshare_stations` AS stations
+    ON trips.start_station_id = stations.station_id
+
+WHERE trips.start_date BETWEEN '2016-03-31' AND '2016-07-01'
+    AND trips.subscriber_type = 'Subscriber'
+    AND stations.landmark = 'Redwood City'
+
+LIMIT 1000
+
